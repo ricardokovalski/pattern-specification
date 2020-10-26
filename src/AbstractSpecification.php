@@ -2,7 +2,10 @@
 
 namespace Moguzz;
 
-use BadMethodCallException;
+use Moguzz\Contract\Specification;
+use Moguzz\Operators\AndSpecification;
+use Moguzz\Operators\NotSpecification;
+use Moguzz\Operators\OrSpecification;
 
 /**
  * Class AbstractSpecification
@@ -13,7 +16,7 @@ abstract class AbstractSpecification implements Specification
 {
     /**
      * @param Specification $specification
-     * @return AndSpecification
+     * @return Specification|AndSpecification
      */
     public function andSpecification(Specification $specification)
     {
@@ -22,7 +25,7 @@ abstract class AbstractSpecification implements Specification
 
     /**
      * @param Specification $specification
-     * @return OrSpecification
+     * @return Specification|OrSpecification
      */
     public function orSpecification(Specification $specification)
     {
@@ -30,7 +33,7 @@ abstract class AbstractSpecification implements Specification
     }
 
     /**
-     * @return NotSpecification
+     * @return Specification|NotSpecification
      */
     public function not()
     {

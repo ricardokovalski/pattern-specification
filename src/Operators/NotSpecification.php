@@ -1,11 +1,14 @@
 <?php
 
-namespace Moguzz;
+namespace Moguzz\Operators;
+
+use Moguzz\AbstractSpecification;
+use Moguzz\Contract\Specification;
 
 /**
  * Class NotSpecification
  *
- * @package Moguzz
+ * @package Moguzz\Operators
  */
 class NotSpecification extends AbstractSpecification
 {

@@ -1,13 +1,16 @@
 <?php
 
-namespace Moguzz;
+namespace Moguzz\Operators;
+
+use Moguzz\AbstractSpecification;
+use Moguzz\Contract\Specification;
 
 /**
- * Class AndSpecification
+ * Class OrSpecification
  *
- * @package Moguzz
+ * @package Moguzz\Operators
  */
-class AndSpecification extends AbstractSpecification
+class OrSpecification extends AbstractSpecification
 {
     /**
      * @var Specification $left
@@ -35,6 +38,6 @@ class AndSpecification extends AbstractSpecification
      */
     public function isSatisfiedBy($object)
     {
-        return $this->left->isSatisfiedBy($object) && $this->right->isSatisfiedBy($object);
+        return $this->left->isSatisfiedBy($object) || $this->right->isSatisfiedBy($object);
     }
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace Moguzz;
+namespace Moguzz\Contract;
 
 /**
  * Interface Specification
  *
- * @package Moguzz
+ * @package Moguzz\Contract
  */
 interface Specification
 {
