@@ -1,11 +1,11 @@
 <?php
 
-namespace Moguzz\Contract;
+namespace RicardoKovalski\Contract;
 
 /**
  * Interface Specification
  *
- * @package Moguzz\Contract
+ * @package RicardoKovalski\Contract
  */
 interface Specification
 {
@@ -17,18 +17,18 @@ interface Specification
 
     /**
      * @param Specification $specification
-     * @return Specification
+     * @return mixed
      */
     public function andSpecification(Specification $specification);
 
     /**
      * @param Specification $specification
-     * @return Specification
+     * @return mixed
      */
     public function orSpecification(Specification $specification);
 
     /**
-     * @return Specification
+     * @return mixed
      */
     public function not();
 }

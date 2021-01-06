@@ -2,7 +2,7 @@
 
 require __DIR__ . '../vendor/autoload.php';
 
-use Moguzz\AbstractSpecification;
+use RicardoKovalski\CompositeSpecification;
 
 class CashOut
 {
@@ -22,27 +22,27 @@ class CashOut
     }
 }
 
-class PendingCashOutSpecification extends AbstractSpecification
+class PendingCashOutSpecification extends CompositeSpecification
 {
-    public function isSatisfiedBy($cashOut)
+    public function isSatisfiedBy($object)
     {
-        return $cashOut->isPending();
+        return $object->isPending();
     }
 }
 
-class PaidCashOutSpecification extends AbstractSpecification
+class PaidCashOutSpecification extends CompositeSpecification
 {
-    public function isSatisfiedBy($cashOut)
+    public function isSatisfiedBy($object)
     {
-        return $cashOut->isPaid();
+        return $object->isPaid();
     }
 }
 
-class RefusedCashOutSpecification extends AbstractSpecification
+class RefusedCashOutSpecification extends CompositeSpecification
 {
-    public function isSatisfiedBy($cashOut)
+    public function isSatisfiedBy($object)
     {
-        return $cashOut->isRefused();
+        return $object->isRefused();
     }
 }
 

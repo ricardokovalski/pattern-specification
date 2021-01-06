@@ -1,16 +1,16 @@
 <?php
 
-namespace Moguzz\Operators;
+namespace RicardoKovalski\Operators;
 
-use Moguzz\AbstractSpecification;
-use Moguzz\Contract\Specification;
+use RicardoKovalski\CompositeSpecification;
+use RicardoKovalski\Contract\Specification;
 
 /**
  * Class AndSpecification
  *
- * @package Moguzz\Operators
+ * @package RicardoKovalski\Operators
  */
-class AndSpecification extends AbstractSpecification
+class AndSpecification extends CompositeSpecification
 {
     /**
      * @var Specification $left
@@ -31,12 +31,12 @@ class AndSpecification extends AbstractSpecification
     public function __construct(Specification $left, Specification $right)
     {
         $this->left = $left;
-        $this->right   = $right;
+        $this->right = $right;
     }
 
     /**
      * @param $object
-     * @return bool|mixed
+     * @return bool
      */
     public function isSatisfiedBy($object)
     {

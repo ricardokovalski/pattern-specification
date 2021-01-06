@@ -1,16 +1,16 @@
 <?php
 
-namespace Moguzz\Operators;
+namespace RicardoKovalski\Operators;
 
-use Moguzz\AbstractSpecification;
-use Moguzz\Contract\Specification;
+use RicardoKovalski\CompositeSpecification;
+use RicardoKovalski\Contract\Specification;
 
 /**
  * Class NotSpecification
  *
- * @package Moguzz\Operators
+ * @package RicardoKovalski\Operators
  */
-class NotSpecification extends AbstractSpecification
+class NotSpecification extends CompositeSpecification
 {
     /**
      * @var Specification $specification
@@ -18,6 +18,8 @@ class NotSpecification extends AbstractSpecification
     private $specification;
 
     /**
+     * NotSpecification constructor.
+     *
      * @param Specification $specification
      */
     public function __construct(Specification $specification)

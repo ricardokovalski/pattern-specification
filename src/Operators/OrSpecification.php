@@ -1,16 +1,16 @@
 <?php
 
-namespace Moguzz\Operators;
+namespace RicardoKovalski\Operators;
 
-use Moguzz\AbstractSpecification;
-use Moguzz\Contract\Specification;
+use RicardoKovalski\CompositeSpecification;
+use RicardoKovalski\Contract\Specification;
 
 /**
  * Class OrSpecification
  *
- * @package Moguzz\Operators
+ * @package RicardoKovalski\Operators
  */
-class OrSpecification extends AbstractSpecification
+class OrSpecification extends CompositeSpecification
 {
     /**
      * @var Specification $left
@@ -23,13 +23,15 @@ class OrSpecification extends AbstractSpecification
     private $right;
 
     /**
+     * OrSpecification constructor.
+     *
      * @param Specification $left
      * @param Specification $right
      */
     public function __construct(Specification $left, Specification $right)
     {
         $this->left = $left;
-        $this->right   = $right;
+        $this->right = $right;
     }
 
     /**

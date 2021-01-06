@@ -39,7 +39,7 @@ class SpecificationTest extends \PHPUnit_Framework_TestCase
     }
 }
 
-class BoolSpecification extends \Moguzz\AbstractSpecification
+class BoolSpecification extends \RicardoKovalski\CompositeSpecification
 {
     private $bool;
 

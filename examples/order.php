@@ -2,7 +2,7 @@
 
 require __DIR__ . '../vendor/autoload.php';
 
-use Moguzz\AbstractSpecification;
+use RicardoKovalski\CompositeSpecification;
 
 class Order
 {
@@ -22,27 +22,27 @@ class Order
     }
 }
 
-class UnshippedOrderSpecification extends AbstractSpecification
+class UnshippedOrderSpecification extends CompositeSpecification
 {
-    public function isSatisfiedBy($order)
+    public function isSatisfiedBy($object)
     {
-        return ! $order->isShipped();
+        return ! $object->isShipped();
     }
 }
 
-class PaidOrderSpecification extends AbstractSpecification
+class PaidOrderSpecification extends CompositeSpecification
 {
-    public function isSatisfiedBy($order)
+    public function isSatisfiedBy($object)
     {
-        return $order->isPaid();
+        return $object->isPaid();
     }
 }
 
-class CancelledOrderSpecification extends AbstractSpecification
+class CancelledOrderSpecification extends CompositeSpecification
 {
-    public function isSatisfiedBy($order)
+    public function isSatisfiedBy($object)
     {
-        return $order->isCancelled();
+        return $object->isCancelled();
     }
 }
 
