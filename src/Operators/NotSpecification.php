@@ -10,7 +10,7 @@ use RicardoKovalski\Contract\Specification;
  *
  * @package RicardoKovalski\Operators
  */
-class NotSpecification extends CompositeSpecification
+final class NotSpecification extends CompositeSpecification
 {
     /**
      * @var Specification $specification
